@@ -1,0 +1,35 @@
+.main-component {
+  width: 100%;
+  display: flex;
+  background-color: #eeeeee;
+}
+.not-verified {
+  width: 50%;
+  height: 90vh;
+  padding: 30px;
+}
+
+.verified {
+  width: 50%;
+  height: 90vh;
+  border-left: 3px solid rgba(0, 0, 0, 0.119);
+  padding: 30px;
+}
+
+.main-data-individual {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.151);
+  max-width: 200px;
+  padding: 10px 30px;
+  font-weight: 600;
+  display: inline-block;
+  margin: 10px 20px 10px 0;
+  cursor: pointer;
+}
+
+.main-data-group {
+  margin-top: 30px;
+  font-size: 18px;
+}
+

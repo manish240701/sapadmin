@@ -1,0 +1,44 @@
+import { collection, onSnapshot } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+import * as XLSX from "xlsx";
+import { db } from "../firebase";
+const NavComponent4 = () => {
+  const rollnos = ["19CST233", "19CSL000", "19csr122"];
+  const [lists, setLists] = useState([]);
+  const exportFunction = () => {
+    const workbook = XLSX.utils.book_new();
+    lists.forEach((list, index) => {
+      XLSX.utils.book_append_sheet(
+        workbook,
+        XLSX.utils.json_to_sheet(list),
+        rollnos[index]
+      );
+    });
+    XLSX.writeFile(workbook, `data.xlsx`);
+    setLists({})
+  };
+
+  useEffect(() => {
+    rollnos.forEach((id, index) => {
+      const unsub = onSnapshot(
+        collection(db, `all/${id}/all`),
+        (snapShot) => {
+          let list = [];
+          snapShot.docs.forEach((doc) => {
+            list.push({ id: doc.id, ...doc.data() });
+          });
+          setLists((prevLists) => [...prevLists.slice(0, index), list, ...prevLists.slice(index + 1)]);
+        },
+        (error) => {
+          alert("error fetching data");
+        }
+      );
+      return () => {
+        unsub();
+      };
+    });
+  }, []);
+  
+  return <button onClick={exportFunction}>Export</button>;
+};
+export default NavComponent4;

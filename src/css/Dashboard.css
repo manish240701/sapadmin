@@ -1,0 +1,116 @@
+.dashboard-container{
+  width: 100%;
+}
+.dashboard-nav {
+  color: white;
+  height: 9%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px;
+}
+
+.logo h6 {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.logo h6:hover {
+  cursor: pointer;
+}
+
+.search-record-input {
+  border-radius: 5px 0 0 5px;
+  padding: 8px 20px;
+}
+
+.input-group {
+  width: 600px;
+}
+
+.search-icon {
+  background-color: rgb(236, 235, 235);
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+}
+
+.search-icon:hover {
+  background-color: rgb(225, 224, 224);
+}
+
+.nav-settings {
+  display: flex;
+}
+
+.color-container {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.change-color-dropdown {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.157);
+  color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 5px 15px;
+  position: relative;
+  right: 10%;
+}
+option {
+  color: black;
+}
+
+select::selection {
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+  outline: none;
+}
+
+
+.logout-button,
+.extract-link-button, .force-link-button {
+  padding: 5px 15px;
+  border-radius: 3px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.157);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.extract-link-button {
+  position: relative;
+  right: 20%;
+}
+.force-link-button {
+  position: relative;
+  right: 30%;
+}
+
+.logout-button:hover,
+.extract-link-button:hover {
+  background-color: rgba(255, 255, 255, 0.287);
+}
+
+
+.dashboard-body{
+  max-height: 90vh;
+  overflow-y: scroll;
+  margin: 0 auto;
+}
+
+.main-header-1{
+  background: url("../assets/login-background.jpeg");
+  padding: 30px 15px;
+  color: white;
+  border-radius: 10px;
+  background-position: center center;
+}
+
+.main-header-2{
+  background: url("../assets/login-background.jpeg");
+  padding: 30px 15px;
+  color: white;
+  border-radius: 10px;
+  background-position: center center;
+
+}

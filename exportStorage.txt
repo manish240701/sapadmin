@@ -1,0 +1,27 @@
+npm install jszip
+
+import JSZip from 'jszip';
+
+  const zip = new JSZip();
+  const downloadPdfs = async () => {
+    console.log(links)
+    const promises = links.map(async (link) => {
+      const response = await fetch(link);
+      const blob = await response.blob();
+      return blob;
+    });
+      console.log(promises)
+    const blobs = await Promise.all(promises);
+  console.log("here"+blobs)
+    blobs.forEach((blob, index) => {
+      zip.file(`pdf-${index}.pdf`, blob);
+    });
+  
+    const content = await zip.generateAsync({ type: "blob" });
+    const url = URL.createObjectURL(content);
+  
+    const link = document.createElement("a");
+    link.download = "pdfs.zip";
+    link.href = url;
+    link.click();
+  };

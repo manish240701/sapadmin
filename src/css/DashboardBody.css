@@ -1,0 +1,50 @@
+.dashboard-body{
+    width: 100%;
+}
+.default-container{
+    height: 91vh;
+    display: grid;
+    place-items: center;
+}
+
+.details-container{
+    width: 80%;
+    margin: 0 auto;
+    padding:40px 0 30px 0;
+}
+
+.details-header{
+    width: 100%;
+    height: 220px;
+    background:url("../assets//data-header.jpg");
+    background-size: cover;
+    background-position: 10% 20%;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    color:white;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.eligible-points section{
+    display: flex;
+    margin-top: 5px;
+}
+
+.eligible-points section h6{
+    margin-right: 20px;
+}
+
+.save-points-button{
+    margin-top: 20px;
+    padding: 8px 10px;
+}
+
+.save-points-button:hover{
+    background-color: white;
+}
+
+.details-header-button-group{
+    display: flex;
+}
